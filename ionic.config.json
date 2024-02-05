@@ -1,0 +1,7 @@
+{
+  "name": "healthlink",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
