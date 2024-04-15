@@ -1,0 +1,44 @@
+<!-- login.page.html -->
+
+<ion-content class="ion-padding">
+
+  <!-- Container with Image -->
+  <div class="image-container po">
+    <img src="assets\health.png" alt="Image" class="image" />
+  </div>
+
+  <!-- Container with Email, Password, Role Dropdown, and Name Input -->
+  <div class="inputs-container">
+    <ion-item>
+      <ion-label position="floating">
+        Name
+      </ion-label>
+      <ion-input [(ngModel)]="signupData.name" name="name" type="text" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Email
+      </ion-label>
+      <ion-input [(ngModel)]="signupData.email" name="email" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        Password
+      </ion-label>
+      <ion-input [(ngModel)]="signupData.password" name="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Role
+      </ion-label>
+      <ion-select [(ngModel)]="signupData.role_id" name="role" required>
+        <ion-select-option value="1">Patient</ion-select-option>
+        <ion-select-option value="2">Doctor</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" class="custom-button" (click)="signup()">Sign Up</ion-button>
+  </div>
+
+</ion-content>

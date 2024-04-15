@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Orders</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search-outline" class="search-icon"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline" class="search-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let order of orders" class="order-card" detail="false" button  [routerLink]="['/track-order']">
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="order.image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Order#: {{ order.id }}</h2>
+          <p>{{ order.dateTime }}</p>
+          <p>{{ order.deliveryStatus }}</p>
+          <p>
+            <ion-icon *ngFor="let star of getStars(order.rating)" name="star"></ion-icon>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

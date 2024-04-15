@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="offer-card">
+    <ion-card-content class="offer-content">
+      <form [formGroup]="orderForm">
+        <div class="input-container">
+          <ion-label class="ion-padding-start">Enter Quantity</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="quantity" placeholder="Quantity in liters" type="number"></ion-input>
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-item>
+        </div>
+
+
+        <div class="input-container">
+          <ion-label class="ion-padding-start">Price</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="total_cost" [disabled]="true" placeholder="price"></ion-input>
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-item>
+        </div>
+
+        <div class="input-container">
+          <ion-label class="ion-padding-start">Select Fuel Type</ion-label>
+          <ion-select class="ion-padding-start" formControlName="fuel_type_id" placeholder="Fuel Type">
+            <ion-select-option *ngFor="let key of getFuelTypeKeys()" [value]="key">{{ fuelTypes[key] }}</ion-select-option>
+          </ion-select>
+
+
+        </div>
+        <div class="input-container">
+          <ion-label class="ion-padding-start"> Your Delivery Location</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="route_name" placeholder="Location"></ion-input>
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-item>
+        </div>
+        <div class="input-container">
+          <ion-label class="ion-padding-start"> Your Location on the Map</ion-label>
+          <!-- Google Maps component -->
+          <google-map #map height="200px" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"></google-map>
+        </div>
+
+        <ion-button type="submit" expand="full" (click)="create()">Submit</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,93 @@
+ion-header {
+    ion-toolbar {
+      --background: #ffffff;
+      --ion-color-primary: #000;
+  
+      ion-title {
+        color: var(--ion-color-primary);
+        font-size: 20px;
+        font-weight: 600;
+      }
+  
+      ion-back-button {
+        color: var(--ion-color-primary);
+      }
+  
+    }
+  }
+  .order-card {
+    ion-card-content {
+      .order-image {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+      
+      .order-details {
+        h2 {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-top: 0.5rem;
+        }
+        
+        .order-number {
+          color: #888;
+          margin: 0.25rem 0;
+        }
+  
+        .order-price {
+          color: #000;
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin: 0.5rem 0;
+        }
+        
+        .order-rating {
+          ion-icon {
+            color: #ffc107; // Gold color for filled stars
+          }
+          ion-icon[name="star-outline"] {
+            color: #ccc; // Light gray color for outline stars
+          }
+        }
+      }
+    }
+  }
+  
+
+  
+  .tracking-card {
+    ion-item{
+      margin-top: 2rem;
+    }
+    ion-list {
+      --padding-start: 0;
+      --padding-end: 0;
+      --ion-item-background: var(--ion-card-background);
+    }
+  
+    .tracking-step {
+      --border-color: var(--ion-color-medium-shade);
+      display: flex;
+      align-items: center;
+      position: relative;
+  
+      ion-icon {
+        font-size: 1.5em;
+      }
+  
+      ion-label {
+        h3 {
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.8em;
+          color: var(--ion-color-medium);
+        }
+      }
+      
+      &.last-step::after {
+        display: none;
+      }
+    }
+  }

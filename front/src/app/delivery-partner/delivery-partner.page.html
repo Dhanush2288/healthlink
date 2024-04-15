@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Delivery Partner</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Loop through orders -->
+  <ion-card *ngFor="let order of orders">
+    <ion-card-header>
+      <ion-card-title>{{ order.item }}</ion-card-title>
+      <ion-card-subtitle>ORDER#: {{ order.number }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ order.price }}</p>
+      <ion-row>
+        <ion-col size="6" *ngIf="order.status === 'new'">
+          <ion-button expand="block" color="success" (click)="acceptOrder(order.id)">Accept</ion-button>
+        </ion-col>
+        <ion-col size="6" *ngIf="order.status === 'accepted'">
+          <ion-button expand="block" color="primary" (click)="completeOrder(order.id)">Complete</ion-button>
+        </ion-col>
+        <ion-col size="6" *ngIf="order.status !== 'completed'">
+          <ion-button expand="block" color="danger" (click)="cancelOrder(order.id)">Cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

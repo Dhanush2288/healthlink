@@ -1,0 +1,37 @@
+ion-header {
+    ion-toolbar {
+      --background: #ffffff;
+      --ion-color-primary: #000;
+  
+      ion-title {
+        color: var(--ion-color-primary);
+        font-size: 20px;
+        font-weight: 600;
+      }
+  
+      ion-back-button {
+        color: var(--ion-color-primary);
+      }
+  
+    }
+  }
+
+  ion-card {
+    ion-card-header {
+      ion-card-title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    }
+  
+    ion-card-content {
+      p {
+        font-size: 1em;
+        color: #333;
+      }
+      ion-button {
+        margin-top: 10px;
+      }
+    }
+  }
+  

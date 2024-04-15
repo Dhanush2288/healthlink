@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Google Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="signInWithGoogle()">Login with Google</ion-button>
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>{{ user.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Email: {{ user.email }}</p>
+      <img [src]="user.imageUrl" *ngIf="user.imageUrl">
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+66

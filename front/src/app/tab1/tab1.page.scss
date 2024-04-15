@@ -1,0 +1,182 @@
+.offer-card {
+  position: relative;
+  background: #000; // Assuming a black background for the card
+  border-radius: 20px; // Rounded corners of the card
+  color: #FFF; // White text color
+  padding: 16px; // Padding inside the card
+  // Styling for the decorative dots on the card
+
+}
+.offer-card::before,
+.offer-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 2px; // Width of a single column of dots
+  height: 40px; // Height to contain all dots
+  background: repeating-linear-gradient(
+    #FFF 0, #FFF 4px, 
+    transparent 4px, transparent 8px
+  ); // Creates a vertical dotted line
+  transform: translateY(-50%);
+}
+
+.offer-card::after {
+  right: 24px; // Position the second column of dots to the left of the first
+}
+
+.offer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Align items to the start (left)
+}
+
+.offer-text {
+  margin-bottom: 16px; // Space between text and button
+  font-size: 1.5rem; // Adjust the font size as needed
+  .p-1{ 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FED534 !important;
+  }
+  
+  
+}
+#button-123{
+  
+    --_offset-border-size: 3px;
+    position: relative;
+    color: black;
+    font-family: system-ui;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #FED534, #fbc900, #FED534);
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 0.25rem;
+}
+#button-123:hover::after {
+  transform: translate(0.7rem, -0.7rem);
+}
+
+
+#button-123::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(1rem, 0.5rem);
+  z-index: -1;
+  background: inherit;
+  border-radius: inherit;
+  transition: transform 200ms;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    var(--_offset-border-size) 100%,
+    var(--_offset-border-size) var(--_offset-border-size),
+    calc(100% - var(--_offset-border-size)) var(--_offset-border-size),
+    calc(100% - var(--_offset-border-size))
+      calc(100% - var(--_offset-border-size)),
+    var(--_offset-border-size) calc(100% - var(--_offset-border-size)),
+    var(--_offset-border-size) 100%,
+    100% 100%,
+    100% 0%
+  );
+}
+.fuel-button {
+  margin: 0.5rem;
+  --border-radius: 8px;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+}
+ion-avatar {
+  --border-radius: 4px;
+}
+.input-container {
+  margin: 16px;
+
+  ion-label {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  ion-item {
+    --background: #FFF;
+    --border-width: 1px;
+    --border-color: #E0E0E0;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --inner-padding-end: 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  ion-input {
+    --padding-start: 10px;
+    --placeholder-color: #999;
+    --placeholder-font-style: italic;
+    color: #000;
+    font-size: 1rem;
+  }
+
+  ion-icon {
+    color: #FED534;
+    margin-right: 8px;
+  }
+}
+
+
+
+/* Add other styles as required to match the uploaded design */
+
+
+.fuel-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 120px; /* Adjust based on your design */
+  margin: 8px;
+  border-radius: 10px;
+  background-color: #FFC107; /* Your chosen yellow color */
+}
+
+ion-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ion-icon {
+  font-size: 30px; /* Adjust based on your design */
+  color: black;
+}
+
+ion-label {
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+
+/* If you have custom colors for the toolbar, adjust these as well */
+ion-toolbar {
+  --background: #ffffff; /* Assuming a white toolbar */
+}
+
+// list-header
+
+.list-header{
+  background-color: #ffffff;
+  .header-fuel{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+  }
+  ion-grid{
+    margin-right: 0;
+    padding: 0;
+  }
+}

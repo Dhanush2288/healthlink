@@ -1,0 +1,61 @@
+<ion-card class="confirm-order-card">
+  <ion-card-header>
+    <ion-card-title>Confirm Order</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="timing-selection">
+      <ion-segment>
+        <ion-segment-button value="now" checked>
+          <ion-label>Now</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="schedule">
+          <ion-label>Schedule</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div class="order-summary">
+      <div class="summary-item">
+        <span>Powered Petrol</span>
+        <span>$130</span>
+      </div>
+      <div class="summary-item">
+        <span>Delivery Charges</span>
+        <span>$0</span>
+      </div>
+      <div class="summary-item">
+        <span>Taxes</span>
+        <span>$5</span>
+      </div>
+      <div class="total-price">
+        <span>Total Price</span>
+        <span>$135</span>
+      </div>
+      <div class="barcode"></div>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-list>
+  <ion-radio-group value="custom-checked">
+    <ion-item>
+      <ion-label>
+        <ion-icon name="logo-paypal" slot="start" ></ion-icon>
+        PayPal
+      </ion-label>
+      <ion-radio slot="start" value="paypal"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="card-outline" slot="start"></ion-icon>
+        Visa/MasterCard
+      </ion-label>
+      <ion-radio slot="start" value="card"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cash On Delivery</ion-label>
+      <ion-radio slot="start" value="cash"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>

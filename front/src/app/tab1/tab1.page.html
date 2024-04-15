@@ -1,0 +1,103 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start"  [routerLink]="['/account']">
+      <ion-avatar>
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
+      </ion-avatar>
+    </ion-buttons> -->
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="apps-outline" ></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="offer-card">
+    <ion-card-content class="offer-content">
+      <p class="offer-text">Get your first fuel delivery with <span class="p-1">zero delivery charges</span></p>
+      <button id="button-123">Get now</button>
+      <div class="dots-pattern"></div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list lines="none" class="list-header">
+    <ion-list-header class="header-fuel">
+      <h1>Choose Your Fuel Type</h1>
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" (click)="getallprices(1)">
+          <ion-button class="fuel-button" expand="block" color="warning" id="open-modal" expand="block">
+            <ion-icon slot="start" name="car-outline"></ion-icon>
+            Petrol
+          </ion-button>
+        </ion-col>
+        <ion-col size="4" (click)="getallprices(2)">
+          <ion-button class="fuel-button" expand="block" color="warning" id="open-modal">
+            <ion-icon slot="start" name="speedometer-outline"></ion-icon>
+            Diesel
+          </ion-button>
+        </ion-col>
+        <ion-col size="4" (click)="getallprices(3)">
+          <ion-button class="fuel-button" expand="block" color="warning" id="open-modal">
+            <ion-icon slot="start" name="flame-outline"></ion-icon>
+            Gas
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+
+
+<ion-content>
+  <ion-list-header class="header-fuel">
+    <h1>All Fuel Prices</h1>
+  </ion-list-header>
+  <ion-list>
+
+    <ion-card *ngFor="let order of orders" class="order-card" detail="false" button  [routerLink]="['/create-order', order.price_id]">
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="images[order.fuel_type_id]"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Price $: {{ order.price }}</h2>
+          <p>{{ order.name }}</p>
+          <p>{{ order.effective_date }}</p>
+          <p>{{ order.email }}</p>
+          <p>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<!--
+  <ion-content class="ion-padding">
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Welcome</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ng-template>
+    </ion-modal>
+  </ion-content> -->
+</ion-content>

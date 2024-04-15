@@ -1,0 +1,32 @@
+<!-- login.page.html -->
+<ion-content class="ion-padding">
+
+  <!-- Container with Image -->
+  <div class="image-container po">
+    <img src="assets\health.png" alt="Image" class="image" />
+  </div>
+
+  <!-- Container with Email and Password Inputs -->
+  <div class="inputs-container">
+    <ion-item>
+      <ion-label position="floating">
+        Email
+      </ion-label>
+      <ion-input [(ngModel)]="loginData.email" name="email" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        Password
+      </ion-label>
+      <ion-input [(ngModel)]="loginData.password" name="password" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="login()">Login</ion-button>
+    <p>OR</p>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+  </div>
+
+</ion-content>
